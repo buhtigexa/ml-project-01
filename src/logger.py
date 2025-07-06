@@ -8,14 +8,12 @@ log_file_path = os.path.join(logs_path, LOG_FILE)
 
 os.makedirs(logs_path, exist_ok=True)
 
-# Configuración base del logging
 logging.basicConfig(
     filename=log_file_path,
     level=logging.INFO,
     format='[%(asctime)s] %(levelname)s: %(message)s',
 )
 
-# 🔁 También loguear a consola
 console_handler = logging.StreamHandler()
 console_handler.setFormatter(logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s'))
 logging.getLogger().addHandler(console_handler)
